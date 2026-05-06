@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import logoIcon from "../assets/logo-icon.png";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,7 @@ export const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-[60] px-8 lg:px-16 py-4 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5 transition-all duration-300">
         {/* Left: Logo */}
         <div className="flex items-center gap-4">
-          <img src="/src/assets/logo-icon.png" alt="Logo" className="h-16 w-16 object-contain" />
+          <img src={logoIcon} alt="Logo" className="h-16 w-16 object-contain" />
           <div className="flex flex-col">
             <span
               className="text-2xl font-heading leading-none tracking-tight uppercase font-bold"
