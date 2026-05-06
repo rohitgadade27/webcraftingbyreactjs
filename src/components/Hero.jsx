@@ -91,15 +91,7 @@ export const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Partners Bar */}
-      <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center gap-6 w-full z-10 px-6 overflow-hidden">
-        <span className="text-[10px] uppercase tracking-[0.3em] !text-black font-semibold whitespace-nowrap">Trusted by Industry Leaders</span>
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-80 transition-all duration-500">
-          {partners.map((partner) => (
-            <span key={partner} className="!text-black font-heading text-base md:text-lg tracking-tighter font-bold">{partner}</span>
-          ))}
-        </div>
-      </div>
+
     </section>
 
   );
