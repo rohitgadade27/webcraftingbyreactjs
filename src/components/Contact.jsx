@@ -9,9 +9,9 @@ export const Contact = () => {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    const text = `Hello React.js.ai! I'm ${name}.\n\nProject Details: ${message}\n\nMy Contact Info:\nPhone: ${phone}\nEmail: ${email}`;
+    const text = `*New Inquiry from React.js.ai*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n\n*Project Details:*\n${message}`;
     const whatsappUrl = `https://wa.me/917558397248?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, "_blank");
+    window.location.href = whatsappUrl;
   };
 
   return (
