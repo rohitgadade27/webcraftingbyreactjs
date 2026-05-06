@@ -69,7 +69,7 @@ export const Navbar = () => {
             </a>
           ))}
           <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             className="ml-2 bg-white text-black rounded-full px-3.5 py-1.5 text-sm font-medium flex items-center gap-1 hover:bg-white/90 transition-all"
           >
             Get Started
@@ -150,7 +150,7 @@ export const Navbar = () => {
                 <button
                   onClick={() => {
                     closeMenu();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className="w-full bg-white text-black rounded-full px-8 py-6 text-xl font-bold flex items-center justify-center gap-3 hover:bg-white/90 transition-all shadow-lg active:scale-95"
                 >

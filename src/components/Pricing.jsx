@@ -87,7 +87,7 @@ export const Pricing = () => {
   const handlePlanSelect = (plan) => {
     const text = `Hello React.js.ai! I'm interested in the *${plan.name}* plan (${plan.price}). Please share more details on how to get started.`;
     const whatsappUrl = `https://wa.me/917558397248?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, "_blank");
+    window.location.href = whatsappUrl;
   };
 
   return (

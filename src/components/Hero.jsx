@@ -65,7 +65,7 @@ export const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-6"
         >
           <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             className="liquid-glass-strong w-full sm:w-auto rounded-full px-8 py-4 text-black font-medium hover:scale-105 transition-transform flex items-center justify-center gap-2"
           >
             Get in Touch
