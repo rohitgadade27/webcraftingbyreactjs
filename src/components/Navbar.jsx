@@ -36,13 +36,13 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[60] px-8 lg:px-16 py-2 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5 transition-all duration-300">
+      <nav className="fixed top-0 left-0 right-0 z-[60] px-8 lg:px-16 h-16 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5 transition-all duration-300">
         {/* Left: Logo */}
-        <div className="flex items-center gap-4">
-          <img src={logoIcon} alt="Logo" className="h-10 w-10 object-contain" />
+        <div className="flex items-center gap-4 h-full">
+          <img src={logoIcon} alt="Logo" className="h-full w-auto object-contain py-2" />
           <div className="flex flex-col">
             <span
-              className="text-xl font-heading leading-none tracking-tight uppercase font-bold"
+              className="text-2xl font-heading leading-none tracking-tight uppercase font-bold"
               style={{ color: 'white' }}
             >
               react.js.ai

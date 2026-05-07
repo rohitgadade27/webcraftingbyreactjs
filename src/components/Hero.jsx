@@ -24,16 +24,7 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center w-full px-6 pt-32 pb-20 md:pt-48 md:pb-32 max-w-7xl mx-auto">
-        {/* Badge Pill */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="liquid-glass rounded-full p-1 mb-6 flex items-center gap-2 pr-4 scale-90 md:scale-100"
-        >
-          <span className="bg-white text-black rounded-full px-3 py-1 text-[10px] md:text-xs font-bold uppercase tracking-wider">New</span>
-          <span className="text-xs md:text-sm font-medium text-white/90 font-body">Introducing AI-powered design.</span>
-        </motion.div>
+
 
         {/* Heading */}
         <div className="mb-8 w-full max-w-4xl mx-auto">

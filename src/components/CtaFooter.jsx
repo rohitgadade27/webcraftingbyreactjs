@@ -36,7 +36,7 @@ export const CtaFooter = () => {
         {/* Brand */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col">
-            <span className="text-2xl font-heading text-white tracking-tight">REACT.JS.AI</span>
+            <span className="text-3xl font-heading text-white tracking-tight">REACT.JS.AI</span>
             <span className="text-[10px] font-body tracking-[0.2em] text-white/40 uppercase">think.codelaunch</span>
           </div>
           <p className="text-white/40 text-sm font-body leading-relaxed max-w-xs">
