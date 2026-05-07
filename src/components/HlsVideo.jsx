@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
 
-export const HlsVideo = ({ src, className = "", style = {} }) => {
+export const HlsVideo = ({ src, className = "", style = {}, objectFit = "object-cover" }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export const HlsVideo = ({ src, className = "", style = {} }) => {
         muted
         loop
         playsInline
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${objectFit} object-center`}
       />
     </div>
   );

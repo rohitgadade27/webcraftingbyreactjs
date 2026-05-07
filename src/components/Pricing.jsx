@@ -91,9 +91,9 @@ export const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className="py-32 bg-black px-6 relative z-10">
+    <section id="pricing" className="pt-12 pb-24 bg-black px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center mb-12">
           <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body mb-6">
             Pricing
           </div>
@@ -105,11 +105,11 @@ export const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`liquid-glass rounded-3xl p-8 flex flex-col h-full border ${plan.highlight ? "border-white/30 bg-white/5" : "border-white/5"
+              className={`liquid-glass rounded-2xl p-6 flex flex-col h-full border ${plan.highlight ? "border-white/30 bg-white/5" : "border-white/5"
                 } relative overflow-hidden group`}
             >
               {plan.highlight && (
@@ -117,16 +117,16 @@ export const Pricing = () => {
                   Most Popular
                 </div>
               )}
-              <h3 className="text-2xl font-heading text-white mb-2">{plan.name}</h3>
-              <p className="text-white/40 text-xs mb-6 uppercase tracking-tighter">{plan.tagline}</p>
-              <div className="mb-8">
-                <span className="text-4xl font-heading text-white">{plan.price}</span>
-                <span className="text-white/40 text-sm ml-1">Onwards</span>
+              <h3 className="text-xl font-heading text-white mb-1">{plan.name}</h3>
+              <p className="text-white/40 text-[10px] mb-4 uppercase tracking-tighter">{plan.tagline}</p>
+              <div className="mb-6">
+                <span className="text-3xl font-heading text-white">{plan.price}</span>
+                <span className="text-white/40 text-xs ml-1">Onwards</span>
               </div>
-              <div className="space-y-4 mb-10 flex-grow">
+              <div className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-sm text-white/60">
-                    <Check className="w-4 h-4 text-white/40" />
+                  <div key={idx} className="flex items-center gap-3 text-[13px] text-white/60">
+                    <Check className="w-3.5 h-3.5 text-white/40" />
                     <span>{feature}</span>
                   </div>
                 ))}

@@ -2,17 +2,20 @@ import { HlsVideo } from "./HlsVideo.jsx";
 
 export const CtaFooter = () => {
   return (
-    <footer className="relative min-h-[800px] flex flex-col items-center justify-center pt-32 px-6 overflow-hidden">
+    <footer className="relative flex flex-col items-center justify-center py-12 md:py-32 px-6 overflow-hidden">
       {/* Background Video */}
-      <HlsVideo src="https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8" />
+      <HlsVideo
+        src="https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8"
+        objectFit="object-contain md:object-cover"
+      />
 
       {/* Fades */}
-      <div className="absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[120px] md:h-[200px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-[120px] md:h-[200px] bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
       {/* Main CTA Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl px-6">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading text-white leading-[0.85] mb-8">
+        <h2 className="text-3xl md:text-6xl lg:text-7xl font-heading text-white leading-[0.85] mb-6">
           Think. Code. Launch.
         </h2>
         <p className="text-white/70 font-body font-light text-base md:text-lg max-w-xl mb-12">
@@ -29,7 +32,7 @@ export const CtaFooter = () => {
       </div>
 
       {/* Footer Grid */}
-      <div className="relative z-10 mt-32 w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-white/10 pt-16 pb-12">
+      <div className="relative z-10 mt-12 md:mt-32 w-full max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-t border-white/10 pt-12 pb-10">
         {/* Brand */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col">
@@ -55,7 +58,7 @@ export const CtaFooter = () => {
         <div className="flex flex-col gap-6">
           <h4 className="text-white font-heading text-lg">Quick Links</h4>
           <div className="flex flex-col gap-3">
-            {["Services", "Pricing", "Blog", "Company"].map((item) => (
+            {["Services", "Pricing"].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="text-white/40 text-sm hover:text-white transition-colors">{item}</a>
             ))}
           </div>

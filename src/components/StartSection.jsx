@@ -2,7 +2,7 @@ import { HlsVideo } from "./HlsVideo.jsx";
 
 export const StartSection = () => {
   return (
-    <section id="process" className="relative min-h-[600px] flex items-center justify-center py-24 overflow-hidden">
+    <section id="process" className="relative flex items-center justify-center pt-32 pb-12 overflow-hidden">
       {/* Background Video */}
       <HlsVideo src="https://stream.mux.com/9JXDljEVWYwWu01PUkAemafDugK89o01BR6zqJ3aS9u00A.m3u8" />
 

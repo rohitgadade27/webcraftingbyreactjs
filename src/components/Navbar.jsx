@@ -8,8 +8,8 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const navLinks = ["Home", "Services", "Pricing", "Why Us", "Contact"];
 
-  const textColor = isScrolled ? "!text-white" : "!text-black";
-  const mutedTextColor = isScrolled ? "!text-white/40" : "!text-black/40";
+  const textColor = isScrolled ? "!text-white" : "!text-white";
+  const mutedTextColor = isScrolled ? "!text-white/40" : "!text-white/40";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,20 +36,20 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[60] px-8 lg:px-16 py-4 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5 transition-all duration-300">
+      <nav className="fixed top-0 left-0 right-0 z-[60] px-8 lg:px-16 py-2 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5 transition-all duration-300">
         {/* Left: Logo */}
         <div className="flex items-center gap-4">
-          <img src={logoIcon} alt="Logo" className="h-16 w-16 object-contain" />
+          <img src={logoIcon} alt="Logo" className="h-10 w-10 object-contain" />
           <div className="flex flex-col">
             <span
-              className="text-2xl font-heading leading-none tracking-tight uppercase font-bold"
-              style={{ color: isScrolled ? 'white' : 'black' }}
+              className="text-xl font-heading leading-none tracking-tight uppercase font-bold"
+              style={{ color: 'white' }}
             >
               react.js.ai
             </span>
             <span
-              className="text-[12px] font-body tracking-[0.2em] uppercase opacity-40 font-medium"
-              style={{ color: isScrolled ? 'white' : 'black' }}
+              className="text-[10px] font-body tracking-[0.2em] uppercase opacity-40 font-medium"
+              style={{ color: 'white' }}
             >
               THINK.CODE.LAUNCH
             </span>
@@ -63,7 +63,7 @@ export const Navbar = () => {
               key={link}
               href={`#${link.replace(/\s+/g, '-').toLowerCase()}`}
               className="px-3 py-2 text-sm font-medium font-body transition-colors opacity-70 hover:opacity-100"
-              style={{ color: isScrolled ? 'white' : 'black' }}
+              style={{ color: 'white' }}
             >
               {link}
             </a>
@@ -82,7 +82,7 @@ export const Navbar = () => {
           <button
             onClick={toggleMenu}
             className="p-2 rounded-full transition-colors relative z-[70] hover:bg-black/5"
-            style={{ color: isScrolled ? 'white' : 'black' }}
+            style={{ color: 'white' }}
             aria-label="Toggle Menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

@@ -59,7 +59,7 @@ export const FeaturesChess = () => {
   };
 
   return (
-    <section id="services" className="py-32 bg-black px-6 relative z-10 overflow-hidden">
+    <section id="services" className="pt-0 pb-32 bg-black px-6 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="relative group">
           <AnimatePresence mode="wait">
