@@ -2,7 +2,7 @@ import { HlsVideo } from "./HlsVideo.jsx";
 
 export const CtaFooter = () => {
   return (
-    <footer className="relative flex flex-col items-center justify-center py-12 md:py-32 px-6 overflow-hidden">
+    <footer className="relative flex flex-col items-center justify-center pt-12 md:pt-32 pb-0 px-6 overflow-hidden">
       {/* Background Video */}
       <HlsVideo
         src="https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8"
@@ -68,14 +68,14 @@ export const CtaFooter = () => {
         <div className="flex flex-col gap-6">
           <h4 className="text-white font-heading text-lg">Get in Touch</h4>
           <div className="flex flex-col gap-3">
-            <a href="mailto:reactjsaiwebcrafting@gmail.com" className="text-white/40 text-sm hover:text-white transition-colors truncate">reactjsaiwebcrafting@gmail.com</a>
+            <a href="mailto:react.js.aiwebcrafting@gmail.com" className="text-white/40 text-sm hover:text-white transition-colors truncate">reactjsaiwebcrafting@gmail.com</a>
             <a href="tel:+917558397248" className="text-white/40 text-sm hover:text-white transition-colors">+91 75583 97248</a>
           </div>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="relative z-10 w-full max-w-7xl pb-12 flex justify-between items-center text-white/20 text-[10px] uppercase tracking-widest">
+      <div className="relative z-10 w-full max-w-7xl pb-4 flex justify-between items-center text-white/20 text-[10px] uppercase tracking-widest">
         <span>© 2026 React.js.ai. All rights reserved.</span>
         <span>Made with care by our team.</span>
       </div>

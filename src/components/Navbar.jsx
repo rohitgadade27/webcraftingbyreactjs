@@ -6,7 +6,7 @@ import logoIcon from "../assets/logo-icon.png";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navLinks = ["Home", "Services", "Pricing", "Why Us", "Contact"];
+  const navLinks = ["Home", "Services", "Pricing", "Consultation", "Why Us", "Contact"];
 
   const textColor = isScrolled ? "!text-white" : "!text-white";
   const mutedTextColor = isScrolled ? "!text-white/40" : "!text-white/40";

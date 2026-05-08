@@ -3,8 +3,8 @@ import { HlsVideo } from "./HlsVideo.jsx";
 export const StatsSection = () => {
   const stats = [
     { value: "100%", label: "Perfect Performance" },
-    { value: "98%", label: "Client satisfaction" },
-    { value: "3.2x", label: "More conversions" },
+    { value: "99%", label: "Client satisfaction" },
+    { value: "3.5x", label: "More conversions" },
     { value: "5 days", label: "Average delivery" },
   ];
 

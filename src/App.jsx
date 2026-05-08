@@ -6,6 +6,7 @@ import { FeaturesGrid } from "./components/FeaturesGrid";
 import { StatsSection } from "./components/StatsSection";
 import { Pricing } from "./components/Pricing";
 import { Contact } from "./components/Contact";
+import { Consultation } from "./components/Consultation";
 import { CtaFooter } from "./components/CtaFooter";
 import { ThreeBackground } from "./components/ThreeBackground";
 
@@ -22,6 +23,7 @@ function App() {
           <FeaturesGrid />
           <StatsSection />
           <Pricing />
+          <Consultation />
           <Contact />
           <CtaFooter />
         </div>
