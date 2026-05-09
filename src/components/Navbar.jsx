@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import newLogo from "../assets/logo - 2.jpg";
+import newLogo from "../assets/logo - 2.PNG";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,10 +42,10 @@ export const Navbar = () => {
           <img src={newLogo} alt="Logo" className="h-full w-auto object-contain py-2 mix-blend-screen" />
           <div className="flex flex-col">
             <span
-              className="text-2xl font-heading leading-none tracking-tight uppercase font-bold"
+              className="text-2xl font-heading leading-none tracking-[0.05em] uppercase font-black"
               style={{ color: 'white' }}
             >
-              Vexiqon
+              VEXIQON
             </span>
             <span
               className="text-[10px] font-body tracking-[0.2em] uppercase opacity-40 font-medium"
@@ -115,7 +115,7 @@ export const Navbar = () => {
                 <div className="flex items-center gap-4 text-white">
                   <img src={newLogo} alt="Logo" className="h-10 w-auto mix-blend-screen" />
                   <div className="flex flex-col">
-                    <span className="text-3xl font-heading leading-none tracking-tight uppercase font-bold">Vexiqon</span>
+                    <span className="text-3xl font-heading leading-none tracking-[0.05em] uppercase font-black">VEXIQON</span>
                     <span className="text-sm font-body tracking-[0.2em] text-white/40 uppercase mt-2 font-medium">think.codelaunch</span>
                   </div>
                 </div>
