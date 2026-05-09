@@ -10,7 +10,7 @@ export const FeaturesChess = () => {
   const services = [
     {
       title: "Website Development",
-      body: "Custom websites built with modern React and Next.js. Fully responsive and SEO optimized. Tailored to your specific business needs.",
+      body: "Custom websites built with modern React and Next.js. Fully responsive. Tailored to your specific business needs.",
       button: "Get Started",
       gif: "https://motionsites.ai/assets/hero-finlytic-preview-CV9g0FHP.gif",
     },

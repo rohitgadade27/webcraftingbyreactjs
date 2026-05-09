@@ -9,7 +9,7 @@ export const Contact = () => {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    const text = `*New Inquiry from React.js.ai*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n\n*Project Details:*\n${message}`;
+    const text = `*New Inquiry from Vexiqon*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n\n*Project Details:*\n${message}`;
     const whatsappUrl = `https://wa.me/917558397248?text=${encodeURIComponent(text)}`;
     window.location.href = whatsappUrl;
   };
@@ -91,13 +91,13 @@ export const Contact = () => {
             </p>
 
             <div className="space-y-8">
-              <a href="mailto:reactjsaiwebcrafting@gmail.com" className="flex items-center gap-6 group">
+              <a href="mailto:vexiqonwebcrafting@gmail.com" className="flex items-center gap-6 group">
                 <div className="liquid-glass-strong w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-1">Email Us</div>
-                  <div className="text-white font-body font-medium">reactjsaiwebcrafting@gmail.com</div>
+                  <div className="text-white font-body font-medium">vexiqonwebcrafting@gmail.com</div>
                 </div>
               </a>
 

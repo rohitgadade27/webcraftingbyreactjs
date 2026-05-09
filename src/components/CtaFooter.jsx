@@ -36,7 +36,7 @@ export const CtaFooter = () => {
         {/* Brand */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col">
-            <span className="text-3xl font-heading text-white tracking-tight">REACT.JS.AI</span>
+            <span className="text-3xl font-heading text-white tracking-tight">VEXIQON</span>
             <span className="text-[10px] font-body tracking-[0.2em] text-white/40 uppercase">think.codelaunch</span>
           </div>
           <p className="text-white/40 text-sm font-body leading-relaxed max-w-xs">
@@ -68,7 +68,7 @@ export const CtaFooter = () => {
         <div className="flex flex-col gap-6">
           <h4 className="text-white font-heading text-lg">Get in Touch</h4>
           <div className="flex flex-col gap-3">
-            <a href="mailto:react.js.aiwebcrafting@gmail.com" className="text-white/40 text-sm hover:text-white transition-colors truncate">reactjsaiwebcrafting@gmail.com</a>
+            <a href="mailto:vexiqonwebcrafting@gmail.com" className="text-white/40 text-sm hover:text-white transition-colors truncate">vexiqonwebcrafting@gmail.com</a>
             <a href="tel:+917558397248" className="text-white/40 text-sm hover:text-white transition-colors">+91 75583 97248</a>
           </div>
         </div>
@@ -76,7 +76,7 @@ export const CtaFooter = () => {
 
       {/* Copyright */}
       <div className="relative z-10 w-full max-w-7xl pb-4 flex justify-between items-center text-white/20 text-[10px] uppercase tracking-widest">
-        <span>© 2026 React.js.ai. All rights reserved.</span>
+        <span>© 2026 Vexiqon. All rights reserved.</span>
         <span>Made with care by our team.</span>
       </div>
     </footer>

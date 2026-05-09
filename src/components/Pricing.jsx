@@ -7,14 +7,14 @@ export const Pricing = () => {
       name: "Starter",
       tagline: "Perfect for small projects",
       price: "₹4999*",
-      features: ["1-3 Pages", "Mobile Friendly", "Basic SEO", "Admin Panel"],
+      features: ["1-3 Pages", "Basic & Perfect", "Mobile Friendly", "Landing Page Design"],
       highlight: false,
     },
     {
       name: "Business",
       tagline: "Most popular choice",
       price: "₹14999*",
-      features: ["5-8 Pages", "Custom Design", "Admin Panel", "WhatsApp Integration", "Advanced SEO", "Analytics Setup"],
+      features: ["5-8 Pages", "Custom Design", "Admin Panel", "WhatsApp Integration",],
       highlight: true,
     },
     {
@@ -69,14 +69,14 @@ export const Pricing = () => {
     //     "Call-To-Action Sections (Lead Generation)",
     //     "Product/Service Highlights with 3D",
     //     "Fully Responsive Design",
-    //     "SEO & Speed Optimized"
+    //     "Speed Optimized"
     //   ],
     //   highlight: false,
     // },
   ];
 
   const addOns = [
-    { name: "Domain & Hosting", price: "₹2000/year" },
+    { name: "Domain & Hosting", price: "₹3000/year" },
     { name: "Payment Gateway Setup", price: "₹3000" },
     { name: "Monthly Maintenance", price: "₹2000" },
     { name: "Additional Pages", price: "₹1000/page" },
@@ -85,7 +85,7 @@ export const Pricing = () => {
   ];
 
   const handlePlanSelect = (plan) => {
-    const text = `Hello React.js.ai! I'm interested in the *${plan.name}* plan (${plan.price}). Please share more details on how to get started.`;
+    const text = `Hello Vexiqon! I'm interested in the *${plan.name}* plan (${plan.price}). Please share more details on how to get started.`;
     const whatsappUrl = `https://wa.me/917558397248?text=${encodeURIComponent(text)}`;
     window.location.href = whatsappUrl;
   };

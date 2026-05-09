@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import logoIcon from "../assets/logo-icon.png";
+import newLogo from "../assets/logo - 2.jpg";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navLinks = ["Home", "Services", "Pricing", "Consultation", "Why Us", "Contact"];
+  const navLinks = ["Home", "Services", "Pricing", "Why Choose Us", "Contact"];
 
   const textColor = isScrolled ? "!text-white" : "!text-white";
   const mutedTextColor = isScrolled ? "!text-white/40" : "!text-white/40";
@@ -39,13 +39,13 @@ export const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-[60] px-8 lg:px-16 h-16 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5 transition-all duration-300">
         {/* Left: Logo */}
         <div className="flex items-center gap-4 h-full">
-          <img src={logoIcon} alt="Logo" className="h-full w-auto object-contain py-2" />
+          <img src={newLogo} alt="Logo" className="h-full w-auto object-contain py-2 mix-blend-screen" />
           <div className="flex flex-col">
             <span
               className="text-2xl font-heading leading-none tracking-tight uppercase font-bold"
               style={{ color: 'white' }}
             >
-              react.js.ai
+              Vexiqon
             </span>
             <span
               className="text-[10px] font-body tracking-[0.2em] uppercase opacity-40 font-medium"
@@ -112,9 +112,12 @@ export const Navbar = () => {
               className="absolute top-0 right-0 bottom-0 w-full max-w-[400px] bg-black/40 backdrop-blur-3xl flex flex-col p-8 shadow-2xl border-l border-white/10"
             >
               <div className="flex items-center justify-between border-b border-white/10 pb-6">
-                <div className="flex flex-col text-white">
-                  <span className="text-3xl font-heading leading-none tracking-tight uppercase font-bold">react.js.ai</span>
-                  <span className="text-sm font-body tracking-[0.2em] text-white/40 uppercase mt-2 font-medium">think.codelaunch</span>
+                <div className="flex items-center gap-4 text-white">
+                  <img src={newLogo} alt="Logo" className="h-10 w-auto mix-blend-screen" />
+                  <div className="flex flex-col">
+                    <span className="text-3xl font-heading leading-none tracking-tight uppercase font-bold">Vexiqon</span>
+                    <span className="text-sm font-body tracking-[0.2em] text-white/40 uppercase mt-2 font-medium">think.codelaunch</span>
+                  </div>
                 </div>
                 <button
                   onClick={closeMenu}
