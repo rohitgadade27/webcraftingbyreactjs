@@ -9,7 +9,7 @@ export const Contact = () => {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    const text = `*New Inquiry from Vexiqon*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n\n*Project Details:*\n${message}`;
+    const text = `*New Inquiry from VEXIQON*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n\n*Project Details:*\n${message}`;
     const whatsappUrl = `https://wa.me/917558397248?text=${encodeURIComponent(text)}`;
     window.location.href = whatsappUrl;
   };

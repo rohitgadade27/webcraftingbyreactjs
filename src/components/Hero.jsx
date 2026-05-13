@@ -29,7 +29,7 @@ export const Hero = () => {
         {/* Heading */}
         <div className="mb-8 w-full max-w-4xl mx-auto">
           <BlurText
-            text="Build Your Business Website with Vexiqon"
+            text="Build Your Business Website with VEXIQON"
             className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading !text-white leading-[0.9] tracking-tight justify-center"
             delay={0.1}
             stagger={0.08}

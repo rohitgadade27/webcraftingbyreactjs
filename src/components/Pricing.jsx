@@ -4,82 +4,79 @@ import { motion } from "motion/react";
 export const Pricing = () => {
   const plans = [
     {
-      name: "Starter",
-      tagline: "Perfect for small projects",
-      price: "₹4999*",
-      features: ["1-3 Pages", "Basic & Perfect", "Mobile Friendly", "Landing Page Design"],
+      name: "Starter Package",
+      tagline: "Perfect for startups & landing pages",
+      price: "₹4999",
+      features: [
+        "Up to 3 Pages",
+        "Responsive Design",
+        "Mobile Friendly",
+        "Landing Page UI",
+        "Fast Loading Website"
+      ],
+      delivery: "5 Working Days",
       highlight: false,
     },
     {
-      name: "Business",
-      tagline: "Most popular choice",
-      price: "₹14999*",
-      features: ["5-8 Pages", "Custom Design", "Admin Panel", "WhatsApp Integration",],
+      name: "Business Package",
+      tagline: "Best for growing businesses",
+      price: "₹18,999",
+      features: [
+        "Up to 7 Pages",
+        "Custom UI/UX Design",
+        "WhatsApp & Email Integration",
+        "Inquiry Forms",
+        "Dynamic Content Sections",
+        "Social Media Integration"
+      ],
+      delivery: "10–14 Working Days",
       highlight: true,
     },
     {
-      name: "Premium",
-      tagline: "Advanced applications",
-      price: "₹34999*",
-      features: ["React/Next.js App", "Custom Backend", "Authentication", "Payment Gateway", "Dashboard", "Database Design"],
+      name: "Premium Web Application",
+      tagline: "Advanced custom web solutions",
+      price: "₹59,999",
+      features: [
+        "React / Next.js Frontend",
+        "Custom Backend",
+        "Authentication System",
+        "Admin Dashboard",
+        "Database Integration",
+        "API Development",
+        "Payment Gateway",
+        "Responsive UI Design",
+        "Performance Optimization"
+      ],
+      delivery: "3–5 Weeks",
       highlight: false,
     },
     {
-      name: "E-Commerce",
-      tagline: "Complete online store",
-      price: "₹49999*",
-      features: ["Product Listing", "Shopping Cart", "Order Tracking", "Admin Panel", "Payment Gateway", "3 Months Support"],
+      name: "E-Commerce Package",
+      tagline: "Complete online store solution",
+      price: "₹79,999",
+      features: [
+        "Custom E-Commerce Website",
+        "Product Management",
+        "Shopping Cart & Checkout",
+        "Payment Gateway",
+        "Order Tracking",
+        "Admin Panel",
+        "Customer Login System",
+        "Mobile Optimized Store"
+      ],
+      delivery: "4–6 Weeks",
       highlight: false,
     },
-    // {
-    //   name: "3D Animation",
-    //   tagline: "Cinematic 3D Experiences",
-    //   price: "₹25999*",
-    //   features: [
-    //     "Interactive 3D Models (WebGL / Three.js)",
-    //     "Smooth Animations & Transitions",
-    //     "Scroll-based 3D Effects",
-    //     "High-Quality Render Showcase",
-    //     "Fullscreen Experience Mode",
-    //     "Performance Optimized (Fast Loading)"
-    //   ],
-    //   highlight: false,
-    // },
-    // {
-    //   name: "3D Portfolio",
-    //   tagline: "Showcase your work",
-    //   price: "₹19999*",
-    //   features: [
-    //     "Interactive 3D Project Showcase",
-    //     "Case Study / Project Detail Pages",
-    //     "Smooth Camera & Scene Transitions",
-    //     "Custom UI with 3D Elements",
-    //     "Contact Form / Hire Me Section",
-    //     "Performance Optimized (Fast Loading)"
-    //   ],
-    //   highlight: false,
-    // },
-    // {
-    //   name: "3D Landing Page",
-    //   tagline: "High-converting 3D",
-    //   price: "₹17999*",
-    //   features: [
-    //     "3D Hero Section (First Impression Focus)",
-    //     "Scroll-based 3D Animations",
-    //     "Call-To-Action Sections (Lead Generation)",
-    //     "Product/Service Highlights with 3D",
-    //     "Fully Responsive Design",
-    //     "Speed Optimized"
-    //   ],
-    //   highlight: false,
-    // },
   ];
 
-  const addOns = [
+  const additionalServices = [
     { name: "Domain & Hosting", price: "₹3000/year" },
     { name: "Payment Gateway Setup", price: "₹3000" },
-    { name: "Monthly Maintenance", price: "₹2000" },
+    { name: "Website Maintenance", price: "₹2000/mo" },
     { name: "Additional Pages", price: "₹1000/page" },
+    { name: "SEO Services", price: "Custom Quote" },
+    { name: "Digital Marketing", price: "Custom Quote" },
+    { name: "AI Chatbot Integration", price: "Custom Quote" },
     { name: "Custom Features", price: "Custom Quote" },
     { name: "Mobile App", price: "Custom Quote" },
   ];
@@ -125,12 +122,18 @@ export const Pricing = () => {
               </div>
               <div className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-[13px] text-white/60">
-                    <Check className="w-3.5 h-3.5 text-white/40" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
+                   <div key={idx} className="flex items-center gap-3 text-[13px] text-white/60">
+                     <Check className="w-3.5 h-3.5 text-white/40" />
+                     <span>{feature}</span>
+                   </div>
+                 ))}
+                 <div className="pt-4 mt-4 border-t border-white/5">
+                   <div className="flex items-center gap-3 text-[13px] text-white/80 font-medium">
+                     <span className="text-white/40 uppercase text-[10px] tracking-widest">Delivery:</span>
+                     <span>{plan.delivery}</span>
+                   </div>
+                 </div>
+               </div>
               <button
                 onClick={() => handlePlanSelect(plan)}
                 className={`w-full py-3 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-2 ${plan.highlight
@@ -147,14 +150,19 @@ export const Pricing = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center mb-12">
-            <h3 className="text-3xl font-heading text-white mb-4">Popular Add-Ons</h3>
+            <h3 className="text-3xl font-heading text-white mb-4">Additional Services</h3>
             <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {addOns.map((addon, index) => (
-              <div key={index} className="liquid-glass rounded-2xl p-4 flex justify-between items-center border border-white/5">
-                <span className="text-white/70 text-sm font-medium">{addon.name}</span>
-                <span className="text-white font-heading">{addon.price}</span>
+            {additionalServices.map((service, index) => (
+              <div key={index} className="liquid-glass rounded-2xl p-5 flex flex-col gap-2 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 rounded-full bg-white/20" />
+                  <span className="text-white/70 text-sm font-medium">{service.name}</span>
+                </div>
+                <div className="pl-6">
+                  <span className="text-white font-heading text-lg">{service.price}</span>
+                </div>
               </div>
             ))}
           </div>

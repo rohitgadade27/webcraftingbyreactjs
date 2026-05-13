@@ -32,7 +32,7 @@ export const CtaFooter = () => {
       </div>
 
       {/* Footer Grid */}
-      <div className="relative z-10 mt-12 md:mt-32 w-full max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-t border-white/10 pt-12 pb-10">
+      <div className="relative z-10 mt-12 md:mt-32 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10 border-t border-white/10 pt-12 pb-10">
         {/* Brand */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col">
@@ -40,18 +40,8 @@ export const CtaFooter = () => {
             <span className="text-[10px] font-body tracking-[0.2em] text-white/40 uppercase">think.codelaunch</span>
           </div>
           <p className="text-white/40 text-sm font-body leading-relaxed max-w-xs">
-            Building beautiful, fast, and scalable websites for modern businesses.
+            Modern websites powered by ReactJS and AI — designed to help brands grow, scale, and stand out in the digital world.
           </p>
-        </div>
-
-        {/* Services */}
-        <div className="flex flex-col gap-6">
-          <h4 className="text-white font-heading text-lg">Services</h4>
-          <div className="flex flex-col gap-3">
-            {["Website Development", "E-Commerce", "Web Applications", "UI/UX Design"].map((item) => (
-              <a key={item} href="#services" className="text-white/40 text-sm hover:text-white transition-colors">{item}</a>
-            ))}
-          </div>
         </div>
 
         {/* Quick Links */}
@@ -76,7 +66,7 @@ export const CtaFooter = () => {
 
       {/* Copyright */}
       <div className="relative z-10 w-full max-w-7xl pb-4 flex justify-between items-center text-white/20 text-[10px] uppercase tracking-widest">
-        <span>© 2026 Vexiqon. All rights reserved.</span>
+        <span>© 2026 VEXIQON. All rights reserved.</span>
         <span>Made with care by our team.</span>
       </div>
     </footer>
