@@ -44,7 +44,7 @@ export const FeaturesChess = () => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % services.length);
-    }, 5000);
+    }, 2500);
     return () => clearInterval(interval);
   }, [isAutoPlaying, services.length]);
 

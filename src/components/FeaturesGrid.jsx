@@ -25,7 +25,7 @@ export const FeaturesGrid = () => {
   ];
 
   return (
-    <section id="why-us" className="py-16 bg-black px-6 relative z-10">
+    <section id="why-choose-us" className="py-16 bg-black px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">

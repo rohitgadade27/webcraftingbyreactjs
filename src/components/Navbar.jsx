@@ -141,10 +141,10 @@ export const Navbar = () => {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className="text-4xl font-heading font-medium text-white/80 hover:text-white transition-all py-6 border-b border-white/5 active:bg-white/5 px-2 rounded-lg flex items-center justify-between group"
+                    className="text-2xl font-heading font-medium text-white/80 hover:text-white transition-all py-4 border-b border-white/5 active:bg-white/5 px-2 rounded-lg flex items-center justify-between group"
                   >
                     {link}
-                    <ArrowUpRight className="w-8 h-8 text-white/20 group-hover:text-white transition-colors" />
+                    <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-white transition-colors" />
                   </a>
                 ))}
               </div>
