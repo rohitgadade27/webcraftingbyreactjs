@@ -48,9 +48,14 @@ export const CtaFooter = () => {
         <div className="flex flex-col gap-6">
           <h4 className="text-white font-heading text-lg">Quick Links</h4>
           <div className="flex flex-col gap-3">
-            {["Services", "Pricing"].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="text-white/40 text-sm hover:text-white transition-colors">{item}</a>
-            ))}
+            {["Services", "Pricing", "Social Media"].map((item) => {
+              const href = item === "Social Media" ? "#social-media" : `#${item.toLowerCase()}`;
+              return (
+                <a key={item} href={href} className="text-white/40 text-sm hover:text-white transition-colors">
+                  {item}
+                </a>
+              );
+            })}
           </div>
         </div>
 

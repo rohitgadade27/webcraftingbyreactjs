@@ -38,6 +38,12 @@ export const FeaturesChess = () => {
       button: "Get Started",
       gif: "/images/service_uiux_design.png",
     },
+    {
+      title: "Social Media Management & Marketing",
+      body: "Professional social media management designed to grow your brand, increase engagement, and build a strong online presence.",
+      button: "View Packages",
+      gif: "/images/service_social_media.png",
+    },
   ];
 
   useEffect(() => {
@@ -84,7 +90,13 @@ export const FeaturesChess = () => {
                     {services[currentIndex].body}
                   </p>
                   <button
-                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => {
+                      if (services[currentIndex].title === "Social Media Management & Marketing") {
+                        window.location.hash = "#social-media";
+                      } else {
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                     className="liquid-glass-strong rounded-full px-8 py-3.5 text-white font-medium hover:scale-105 transition-transform flex items-center gap-2"
                   >
                     {services[currentIndex].button}
