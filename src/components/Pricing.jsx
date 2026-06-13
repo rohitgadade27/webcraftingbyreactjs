@@ -6,7 +6,7 @@ export const Pricing = () => {
     {
       name: "Starter Package",
       tagline: "Perfect for startups & landing pages",
-      price: "₹4999",
+      price: "₹8999",
       features: [
         "Up to 3 Pages",
         "Responsive Design",
@@ -20,7 +20,7 @@ export const Pricing = () => {
     {
       name: "Business Package",
       tagline: "Best for growing businesses",
-      price: "₹18,999",
+      price: "₹24,999",
       features: [
         "Up to 7 Pages",
         "Custom UI/UX Design",
@@ -35,7 +35,7 @@ export const Pricing = () => {
     {
       name: "Premium Web Application",
       tagline: "Advanced custom web solutions",
-      price: "₹59,999",
+      price: "₹79,999",
       features: [
         "React / Next.js Frontend",
         "Custom Backend",
@@ -53,7 +53,7 @@ export const Pricing = () => {
     {
       name: "E-Commerce Package",
       tagline: "Complete online store solution",
-      price: "₹79,999",
+      price: "₹1,19,999",
       features: [
         "Custom E-Commerce Website",
         "Product Management",
