@@ -34,12 +34,54 @@ export const Navbar = ({ currentPath }) => {
     };
   }, [isOpen]);
 
+  const handleNavClick = (link, e) => {
+    if (e) e.preventDefault();
+    const isSocialMedia = link === "Social Media";
+    const targetPath = isSocialMedia ? "/social-media" : "/";
+    const targetHash = isSocialMedia ? "" : `#${link.replace(/\s+/g, '-').toLowerCase()}`;
+
+    if (typeof window !== "undefined") {
+      if (isSocialMedia) {
+        window.history.pushState({}, "", "/social-media");
+        window.dispatchEvent(new PopStateEvent("popstate"));
+      } else {
+        const id = link.replace(/\s+/g, '-').toLowerCase();
+        if (window.location.pathname !== "/") {
+          window.history.pushState({}, "", `/${targetHash}`);
+          window.dispatchEvent(new PopStateEvent("popstate"));
+        } else {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+          window.history.pushState({}, "", `/${targetHash}`);
+        }
+      }
+    }
+    closeMenu();
+  };
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-[60] px-8 lg:px-16 h-16 flex items-center justify-between backdrop-blur-md bg-black/20 border-b border-white/5 transition-all duration-300">
-        {/* Left: Logo */}
-        <div className="flex items-center gap-4 h-full">
-          <img src={newLogo} alt="Logo" className="h-full w-auto object-contain py-2 mix-blend-screen" />
+        {/* Left: Logo & Brand */}
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            if (typeof window !== "undefined") {
+              if (window.location.pathname !== "/") {
+                window.history.pushState({}, "", "/");
+                window.dispatchEvent(new PopStateEvent("popstate"));
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.history.pushState({}, "", "/");
+              }
+            }
+          }}
+          className="flex items-center gap-4 h-full cursor-pointer"
+        >
+          <img src={newLogo} alt="Vexiqon Logo" className="h-full w-auto object-contain py-2 mix-blend-screen" />
           <div className="flex flex-col">
             <span
               className="text-2xl font-heading leading-none tracking-[0.05em] uppercase font-black"
@@ -54,26 +96,34 @@ export const Navbar = ({ currentPath }) => {
               THINK.CODE.LAUNCH
             </span>
           </div>
-        </div>
+        </a>
 
         {/* Center: Navigation Links (Desktop) */}
         <div className="hidden md:flex items-center liquid-glass rounded-full px-1.5 py-1">
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.replace(/\s+/g, '-').toLowerCase()}`}
-              className="px-3 py-2 text-sm font-medium font-body transition-colors opacity-70 hover:opacity-100"
-              style={{ color: 'white' }}
-            >
-              {link}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isSocialMedia = link === "Social Media";
+            const targetHash = isSocialMedia ? "" : `#${link.replace(/\s+/g, '-').toLowerCase()}`;
+            return (
+              <a
+                key={link}
+                href={isSocialMedia ? "/social-media" : `/${targetHash}`}
+                onClick={(e) => handleNavClick(link, e)}
+                className="px-3 py-2 text-sm font-medium font-body transition-colors opacity-70 hover:opacity-100"
+                style={{ color: 'white' }}
+              >
+                {link}
+              </a>
+            );
+          })}
           <button
             onClick={() => {
-              if (currentPath === "#social-media") {
-                window.location.hash = "#pricing";
-              } else {
-                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+              if (typeof window !== "undefined") {
+                if (window.location.pathname !== "/") {
+                  window.history.pushState({}, "", "/#pricing");
+                  window.dispatchEvent(new PopStateEvent("popstate"));
+                } else {
+                  document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                }
               }
             }}
             className="ml-2 bg-white text-black rounded-full px-3.5 py-1.5 text-sm font-medium flex items-center gap-1 hover:bg-white/90 transition-all"
@@ -118,13 +168,29 @@ export const Navbar = ({ currentPath }) => {
               className="absolute top-0 right-0 bottom-0 w-full max-w-[400px] bg-black/40 backdrop-blur-3xl flex flex-col p-8 shadow-2xl border-l border-white/10"
             >
               <div className="flex items-center justify-between border-b border-white/10 pb-6">
-                <div className="flex items-center gap-4 text-white">
-                  <img src={newLogo} alt="Logo" className="h-10 w-auto mix-blend-screen" />
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    closeMenu();
+                    if (typeof window !== "undefined") {
+                      if (window.location.pathname !== "/") {
+                        window.history.pushState({}, "", "/");
+                        window.dispatchEvent(new PopStateEvent("popstate"));
+                      } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.history.pushState({}, "", "/");
+                      }
+                    }
+                  }}
+                  className="flex items-center gap-4 text-white cursor-pointer"
+                >
+                  <img src={newLogo} alt="Vexiqon Logo" className="h-10 w-auto mix-blend-screen" />
                   <div className="flex flex-col">
                     <span className="text-3xl font-heading leading-none tracking-[0.05em] uppercase font-black">VEXIQON</span>
                     <span className="text-sm font-body tracking-[0.2em] text-white/40 uppercase mt-2 font-medium">think.codelaunch</span>
                   </div>
-                </div>
+                </a>
                 <button
                   onClick={closeMenu}
                   className="p-3 text-white bg-white/5 hover:bg-white/10 rounded-full transition-colors"
@@ -134,35 +200,34 @@ export const Navbar = ({ currentPath }) => {
               </div>
 
               <div className="flex flex-col gap-1 mt-8 overflow-y-auto">
-                {navLinks.map((link) => (
-                  <a
-                    key={link}
-                    href={`#${link.replace(/\s+/g, '-').toLowerCase()}`}
-                    onClick={(e) => {
-                      closeMenu();
-                      const id = link.replace(/\s+/g, '-').toLowerCase();
-                      const element = document.getElementById(id);
-                      if (element) {
-                        e.preventDefault();
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="text-2xl font-heading font-medium text-white/80 hover:text-white transition-all py-4 border-b border-white/5 active:bg-white/5 px-2 rounded-lg flex items-center justify-between group"
-                  >
-                    {link}
-                    <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-white transition-colors" />
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isSocialMedia = link === "Social Media";
+                  const targetHash = isSocialMedia ? "" : `#${link.replace(/\s+/g, '-').toLowerCase()}`;
+                  return (
+                    <a
+                      key={link}
+                      href={isSocialMedia ? "/social-media" : `/${targetHash}`}
+                      onClick={(e) => handleNavClick(link, e)}
+                      className="text-2xl font-heading font-medium text-white/80 hover:text-white transition-all py-4 border-b border-white/5 active:bg-white/5 px-2 rounded-lg flex items-center justify-between group"
+                    >
+                      {link}
+                      <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-white transition-colors" />
+                    </a>
+                  );
+                })}
               </div>
 
               <div className="mt-auto pt-8">
                 <button
                   onClick={() => {
                     closeMenu();
-                    if (currentPath === "#social-media") {
-                      window.location.hash = "#pricing";
-                    } else {
-                      document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                    if (typeof window !== "undefined") {
+                      if (window.location.pathname !== "/") {
+                        window.history.pushState({}, "", "/#pricing");
+                        window.dispatchEvent(new PopStateEvent("popstate"));
+                      } else {
+                        document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }
                   }}
                   className="w-full bg-white text-black rounded-full px-8 py-6 text-xl font-bold flex items-center justify-center gap-3 hover:bg-white/90 transition-all shadow-lg active:scale-95"

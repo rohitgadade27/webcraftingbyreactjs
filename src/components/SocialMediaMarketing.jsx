@@ -101,7 +101,14 @@ export const SocialMediaMarketing = () => {
       <div className="max-w-7xl mx-auto px-6 mb-16">
         {/* Back Button */}
         <a
-          href="#home"
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            if (typeof window !== "undefined") {
+              window.history.pushState({}, "", "/");
+              window.dispatchEvent(new PopStateEvent("popstate"));
+            }
+          }}
           className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors duration-300 mb-8 px-4 py-2 rounded-full liquid-glass text-sm font-medium border border-white/5 hover:border-white/10"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />

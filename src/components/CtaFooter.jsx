@@ -34,11 +34,27 @@ export const CtaFooter = () => {
       {/* Footer Grid */}
       <div className="relative z-10 mt-12 md:mt-32 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10 border-t border-white/10 pt-12 pb-10">
         {/* Brand */}
+        {/* Brand */}
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col">
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== "undefined") {
+                if (window.location.pathname !== "/") {
+                  window.history.pushState({}, "", "/");
+                  window.dispatchEvent(new PopStateEvent("popstate"));
+                } else {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  window.history.pushState({}, "", "/");
+                }
+              }
+            }}
+            className="flex flex-col cursor-pointer"
+          >
             <span className="text-3xl font-heading text-white tracking-tight">VEXIQON</span>
             <span className="text-[10px] font-body tracking-[0.2em] text-white/40 uppercase">think.codelaunch</span>
-          </div>
+          </a>
           <p className="text-white/40 text-sm font-body leading-relaxed max-w-xs">
             Modern websites powered by ReactJS and AI — designed to help brands grow, scale, and stand out in the digital world.
           </p>
@@ -49,9 +65,36 @@ export const CtaFooter = () => {
           <h4 className="text-white font-heading text-lg">Quick Links</h4>
           <div className="flex flex-col gap-3">
             {["Services", "Pricing", "Social Media"].map((item) => {
-              const href = item === "Social Media" ? "#social-media" : `#${item.toLowerCase()}`;
+              const isSocialMedia = item === "Social Media";
+              const targetHash = isSocialMedia ? "" : `#${item.toLowerCase()}`;
+              const href = isSocialMedia ? "/social-media" : `/${targetHash}`;
               return (
-                <a key={item} href={href} className="text-white/40 text-sm hover:text-white transition-colors">
+                <a
+                  key={item}
+                  href={href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (typeof window !== "undefined") {
+                      if (isSocialMedia) {
+                        window.history.pushState({}, "", "/social-media");
+                        window.dispatchEvent(new PopStateEvent("popstate"));
+                      } else {
+                        const id = item.toLowerCase();
+                        if (window.location.pathname !== "/") {
+                          window.history.pushState({}, "", `/${targetHash}`);
+                          window.dispatchEvent(new PopStateEvent("popstate"));
+                        } else {
+                          const element = document.getElementById(id);
+                          if (element) {
+                            element.scrollIntoView({ behavior: "smooth" });
+                          }
+                          window.history.pushState({}, "", `/${targetHash}`);
+                        }
+                      }
+                    }
+                  }}
+                  className="text-white/40 text-sm hover:text-white transition-colors"
+                >
                   {item}
                 </a>
               );
