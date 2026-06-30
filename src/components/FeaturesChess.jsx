@@ -18,7 +18,7 @@ export const FeaturesChess = () => {
       title: "E-Commerce Solutions",
       body: "Complete e-commerce platforms with payment integration, inventory, and admin panels. Scale your online store with ease.",
       button: "Get Started",
-      gif: "/images/service_ecommerce.png",
+      gif: "/images/service_ecommerce.webp",
     },
     {
       title: "3D Animation Website",
@@ -36,13 +36,13 @@ export const FeaturesChess = () => {
       title: "UI/UX Design",
       body: "Beautiful, intuitive designs that convert visitors into customers. User-focused approach with rapid prototyping.",
       button: "Get Started",
-      gif: "/images/service_uiux_design.png",
+      gif: "/images/service_uiux_design.webp",
     },
     {
       title: "Social Media Management & Marketing",
       body: "Professional social media management designed to grow your brand, increase engagement, and build a strong online presence.",
       button: "View Packages",
-      gif: "/images/service_social_media.png",
+      gif: "/images/service_social_media.webp",
     },
   ];
 
@@ -67,6 +67,16 @@ export const FeaturesChess = () => {
   return (
     <section id="services" className="pt-0 pb-32 bg-black px-6 relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-semibold text-white font-body mb-6 border border-white/5 uppercase tracking-wider">
+            Our Services
+          </div>
+          <h2 className="text-4xl md:text-5xl font-heading text-white tracking-tight leading-[0.9]">
+            Comprehensive Web & Marketing Solutions
+          </h2>
+        </div>
+
         <div className="relative group">
           <AnimatePresence mode="wait">
             <motion.div
@@ -92,7 +102,10 @@ export const FeaturesChess = () => {
                   <button
                     onClick={() => {
                       if (services[currentIndex].title === "Social Media Management & Marketing") {
-                        window.location.hash = "#social-media";
+                        if (typeof window !== "undefined") {
+                          window.history.pushState({}, "", "/social-media");
+                          window.dispatchEvent(new PopStateEvent("popstate"));
+                        }
                       } else {
                         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                       }
@@ -122,6 +135,7 @@ export const FeaturesChess = () => {
                       src={services[currentIndex].gif}
                       alt={services[currentIndex].title}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />

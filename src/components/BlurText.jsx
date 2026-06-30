@@ -1,13 +1,14 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
-export const BlurText = ({ text, delay = 0, stagger = 0.1, className = "" }) => {
+export const BlurText = ({ text, delay = 0, stagger = 0.1, className = "", as = "div" }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const words = text.split(" ");
+  const Component = as;
 
   return (
-    <div ref={ref} className={`flex flex-wrap ${className}`}>
+    <Component ref={ref} className={`flex flex-wrap ${className}`}>
       {words.map((word, index) => (
         <motion.span
           key={index}
@@ -28,6 +29,6 @@ export const BlurText = ({ text, delay = 0, stagger = 0.1, className = "" }) => 
           {word}
         </motion.span>
       ))}
-    </div>
+    </Component>
   );
 };
