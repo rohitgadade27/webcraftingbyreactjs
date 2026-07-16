@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["'Helvetica Now'", "'Inter'", "sans-serif"],
-        body: ["'Helvetica Now'", "'Inter'", "sans-serif"],
+        heading: ["'Helvetica Neue'", "Helvetica", "Arial", "sans-serif"],
+        body: ["'Helvetica Neue'", "Helvetica", "Arial", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

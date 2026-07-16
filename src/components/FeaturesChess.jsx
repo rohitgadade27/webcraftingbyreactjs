@@ -5,7 +5,6 @@ import { HlsVideo } from "./HlsVideo.jsx";
 
 export const FeaturesChess = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const services = [
     {
@@ -46,21 +45,11 @@ export const FeaturesChess = () => {
     },
   ];
 
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % services.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, services.length]);
-
   const next = () => {
-    setIsAutoPlaying(false);
     setCurrentIndex((prev) => (prev + 1) % services.length);
   };
 
   const prev = () => {
-    setIsAutoPlaying(false);
     setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
   };
 
