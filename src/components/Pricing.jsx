@@ -20,9 +20,9 @@ export const Pricing = () => {
     {
       name: "Business Package",
       tagline: "Best for growing businesses",
-      price: "₹24,999",
+      price: "₹35,500",
       features: [
-        "Up to 7 Pages",
+        "Up to 5 Pages",
         "Custom UI/UX Design",
         "WhatsApp & Email Integration",
         "Inquiry Forms",
@@ -73,7 +73,7 @@ export const Pricing = () => {
     { name: "Domain & Hosting", price: "₹3000/year" },
     { name: "Payment Gateway Setup", price: "₹3000" },
     { name: "Website Maintenance", price: "₹2000/mo" },
-    { name: "Additional Pages", price: "₹1000/page" },
+    { name: "Additional Pages", price: "₹2000/page" },
     { name: "SEO Services", price: "Custom Quote" },
     { name: "Digital Marketing", price: "Custom Quote" },
     { name: "AI Chatbot Integration", price: "Custom Quote" },

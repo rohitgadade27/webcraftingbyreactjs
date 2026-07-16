@@ -8,7 +8,7 @@ export const SocialMediaMarketing = () => {
     {
       name: "Basic Package",
       tagline: "Perfect for startups & local businesses",
-      price: "₹11999",
+      price: "₹14999",
       period: "/month",
       startingAt: true,
       features: [
@@ -17,7 +17,6 @@ export const SocialMediaMarketing = () => {
         "Caption Writing",
         "Hashtag Research",
         "Basic Page Management",
-        "Monthly Insights Report",
         "Instagram / Facebook Management",
       ],
       highlight: false,
@@ -25,7 +24,7 @@ export const SocialMediaMarketing = () => {
     {
       name: "Standard Package",
       tagline: "Best for growing businesses",
-      price: "₹15,999",
+      price: "₹24,999",
       period: "/month",
       startingAt: false,
       features: [
@@ -43,7 +42,7 @@ export const SocialMediaMarketing = () => {
     {
       name: "Premium Package",
       tagline: "Complete brand management solution",
-      price: "₹25,999",
+      price: "₹44,999",
       period: "/month",
       startingAt: false,
       features: [
